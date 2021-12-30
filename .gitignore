@@ -1,0 +1,12 @@
+# Enviroment varirables
+.env
+
+# Binaries
+*.exe
+bin/
+
+# Test Binaries
+*.test
+
+# output of go coverage tool
+*.out
