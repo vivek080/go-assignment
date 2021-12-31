@@ -9,7 +9,7 @@ type BookRequestData struct {
 
 // BookRequestDetails defines a request Book struct
 type BookRequestDetails struct {
-	Name          string `json:"bookName,omitempty"`
+	Name          string `json:"name,omitempty"`
 	Title         string `json:"title,omitempty"`
 	Price         string `json:"price,omitempty"`
 	PublishedDate string `json:"publishedDate,omitempty"`

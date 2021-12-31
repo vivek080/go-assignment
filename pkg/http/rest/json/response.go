@@ -23,7 +23,7 @@ type BookResponseData struct {
 
 // BookResponseDetails defines a book struct
 type BookResponseDetails struct {
-	Name          string    `json:"bookName,omitempty"`
+	Name          string    `json:"name,omitempty"`
 	Title         string    `json:"title,omitempty"`
 	Price         string    `json:"price,omitempty"`
 	PublishedDate string    `json:"publishedDate,omitempty"`
