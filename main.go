@@ -28,6 +28,7 @@ func main() {
 	s := book.NewService(client)
 	router := rest.NewHandler(s)
 	auth := rest.NewMiddleware(router)
+	log.Println("Book Server started at port 5000")
 	log.Fatal(http.ListenAndServe(":5000", auth))
 
 }
