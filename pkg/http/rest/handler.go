@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/vivek080/go-assignment/pkg/book"
+	"github.com/vivek080/library-app/pkg/book"
 )
 
 // NewHandler returns a mux router that staisfies http.Handler interface

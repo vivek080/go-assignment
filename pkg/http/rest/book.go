@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/vivek080/go-assignment/pkg/book"
-	httpJson "github.com/vivek080/go-assignment/pkg/http/rest/json"
+	"github.com/vivek080/library-app/pkg/book"
+	httpJson "github.com/vivek080/library-app/pkg/http/rest/json"
 )
 
 // BookHandler handles the book endpoints

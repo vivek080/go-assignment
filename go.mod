@@ -1,4 +1,4 @@
-module github.com/vivek080/go-assignment
+module github.com/vivek080/library-app
 
 go 1.17
 

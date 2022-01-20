@@ -1,6 +1,6 @@
 package json
 
-import "github.com/vivek080/go-assignment/pkg/storage"
+import "github.com/vivek080/library-app/pkg/storage"
 
 // BookRequestData defines a request book struct data
 type BookRequestData struct {

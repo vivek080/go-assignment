@@ -1,7 +1,7 @@
 package book
 
 import (
-	"github.com/vivek080/go-assignment/pkg/storage"
+	"github.com/vivek080/library-app/pkg/storage"
 )
 
 // Repository defines funcs that a storage implementation should implement

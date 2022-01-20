@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/vivek080/go-assignment/pkg/internal/mocks"
-	"github.com/vivek080/go-assignment/pkg/storage"
+	"github.com/vivek080/library-app/pkg/internal/mocks"
+	"github.com/vivek080/library-app/pkg/storage"
 )
 
 // TestSaveBook_1 test tries to save the book details in DB & expects status code be 201
