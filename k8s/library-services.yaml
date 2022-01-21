@@ -22,8 +22,6 @@ spec:
         envFrom:
           - secretRef:
               name: library-app-secret
-          - configMapRef:
-              name: library-config
 
 ---
 

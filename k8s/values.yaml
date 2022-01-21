@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: library-config
-data:
-  DB_URI: mongodb://mongodb-standalone-0.database:27017
-  DB_Name: library
-  
