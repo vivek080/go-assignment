@@ -21,7 +21,7 @@ func NewMiddleware(next http.Handler) *Middleware {
 
 // ServeHTTP implements authentication and if successfully authenticated, will chain the next http.Handler
 func (m *Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	const basicAuthPrefix = "Basic"
+	const basicAuthPrefix = "Basic "
 	user := []byte(os.Getenv("BASIC_AUTH_USERNAME"))
 	password := []byte(os.Getenv("BASIC_AUTH_PASSWORD"))
 
