@@ -19,8 +19,8 @@ func main() {
 
 	s := book.NewService(client)
 	router := rest.NewHandler(s)
-	auth := rest.NewMiddleware(router)
+	// auth := rest.NewMiddleware(router)
 	log.Println("Library App Server started at port 80")
-	log.Fatal(http.ListenAndServe(":80", auth))
+	log.Fatal(http.ListenAndServe(":80", router))
 
 }
