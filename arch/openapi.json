@@ -1,0 +1,262 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "version": "0.0.1",
+      "title": "Library App Service",
+      "description": "API specification of Library App service"
+    },
+    "servers": [
+      {
+        "url": "localhost:30086",
+        "description": "Local Deployment URL"
+      }
+    ],
+    "paths": {
+      "/book": {
+        "post": {
+          "summary": "Create Book details",
+          "description": "Create a new Book detail in database",
+          "operationId": "createBook",
+          "tags": [
+            "library"
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bookRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Ok",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/bookResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "409": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error"
+            }
+          }
+        },
+        "get": {
+          "summary": "get Book list",
+          "description": "Fetchs the list of books from DB",
+          "operationId": "getBookList",
+          "tags": [
+            "library"
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/booklistResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "409": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error"
+            }
+          }
+        }
+      },
+      "/book/{bookID}": {
+        "get": {
+          "summary": "Get Book",
+          "description": "Fetch details of a book",
+          "operationId": "getBook",
+          "tags": [
+            "library"
+          ],
+          "parameters": [
+            {
+              "required": true,
+              "in": "path",
+              "name": "bookID",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/bookResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        },
+        "bookRequest": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "publishedDate": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "bookResponse": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "publishedDate": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "modified": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "booklistResponse": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "example": [
+                {
+                  "id": "string",
+                  "name": "string",
+                  "title": "trash",
+                  "price": "string",
+                  "publishedDate": "string",
+                  "created": "string",
+                  "modified": "string"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
