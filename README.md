@@ -1,6 +1,6 @@
-# Go-Assignment
+# Library App
 
-This Project is used to create and fetch Book Details in DB
+A RESTful API Microservice for Managing Book Details
 
 
 ## Local Deployment
@@ -10,13 +10,32 @@ before runing this project please create and `.env` file and copy the details fr
 To deploy this project run
 
 ```bash
-  go run main.go
+  # to build the binary for the project
+  go build
+  # then run the binary start the service
+  ./library-app 
 ```
-you will see `Book Server started at port 5000` in the terminal
+you will see `Book Server started at port 80` in the terminal
 
-you can use the `/book` endpoint to create a book in the DB using POST method
+## Deployment using K8s
+To deploy this project using K8s yaml file 
 
-you can use the `/book` endpoint to get list of all the books from the DB using GET method
+```bash
+  # apply this command to create all the deployment present in the directory
+  kubectl apply -f k8s/
+```
+after successful creation of services you can access the endpoints using
+```
+localhost:30081
+```
+
+
+## API Documentation
+Please visit the API Documentation for the API Endpoints and the body data
+
+[Documentation](https://github.com/vivek080/library-app/blob/main/arch/openapi.json)
+
+
 ## Unit testing
 
 To run the unit testing:
